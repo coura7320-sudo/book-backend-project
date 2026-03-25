@@ -1,0 +1,28 @@
+{
+  "name": "book-backend-project",
+  "version": "1.0.0",
+  "description": "my project",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/src/index.js",
+    "dev": "nodemon backend/src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coura7320-sudo/book-backend-project.git"
+  },
+  "author": "coura",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coura7320-sudo/book-backend-project/issues"
+  },
+  "homepage": "https://github.com/coura7320-sudo/book-backend-project#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.3.2",
+    "nodemon": "^3.1.14"
+  }
+}
