@@ -17,10 +17,17 @@ const startServer= async()=>{
         });
         
 
-        app.listen(process.env.PORT|| 8000, () => {
-            console.log(`Server is running on port ${process.env.PORT }`);//it will connect on this port when i run it to my database
-            
-        })
+        const port = parseInt(process.env.PORT, 10) || 8000;
+        app.listen(port, () => {
+            console.log(`Server is running on port ${port}`);
+        }).on("error", (err) => {
+            if (err.code === "EADDRINUSE") {
+                console.error(`Port ${port} is already in use.`);
+            } else {
+                console.error("Server error:", err);
+            }
+            process.exit(1);
+        });
     } catch (error) {
         console.log("MongoDB connection failed:", error);
         

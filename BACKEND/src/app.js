@@ -1,9 +1,11 @@
 import express from 'express';
-
-const app = express();
-app.use(express.json());
+import cors from 'cors';
 import userRoutes from "./routes/user.route.js";
 import postRoutes from "./routes/post.route.js";
+
+const app = express();
+app.use(cors({ origin: 'http://localhost:5174', credentials: true }));
+app.use(express.json());
 
 
 

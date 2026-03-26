@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 
 export const createPost = async (req, res) => {
     try {
-        const { title, content, author } = req.body;
+        const { title, content, author, image } = req.body;
         
         if (!title || !content || !author) {
             return res.status(400).json({ message: "All fields are required" });
@@ -25,6 +25,7 @@ export const createPost = async (req, res) => {
             title,
             content,
             author,
+            image,
         });
 
         res.status(201).json({ message: "Post created successfully", post });

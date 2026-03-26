@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node backend/src/index.js",
-    "dev": "nodemon backend/src/index.js"
+    "dev": "nodemon BACKEND/src/index.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/coura7320-sudo/book-backend-project#readme",
   "dependencies": {
     "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "mongoose": "^9.3.2",

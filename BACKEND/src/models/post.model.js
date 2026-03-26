@@ -20,6 +20,11 @@ const postSchema = new Schema(
             ref: "User",
             required: true,
         },
+        image: {
+            type: String,
+            trim: true,
+            default: "",
+        },
     },
     { timestamps: true },
 );

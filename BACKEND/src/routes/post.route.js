@@ -3,5 +3,5 @@ import { createPost, getPosts, deletePost } from "../controllers/post.controller
 const router = Router();
 router.route("/create").post(createPost);
 router.route("/get").get(getPosts);
-router.route("/delete/:id").delete(deletePost);
+router.delete("/delete/:id", deletePost);
 export default router; 
