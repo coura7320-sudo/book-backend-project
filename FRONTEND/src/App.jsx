@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link, Navigate } from "react-ro
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Home from "./components/Home";
-import Admin from "./components/Admin";
+import Admin from "./components/admin";
 
 // vérifier si connecté
 const isAuthenticated = () => {

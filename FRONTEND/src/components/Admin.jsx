@@ -12,18 +12,18 @@ export default function Admin() {
   const userString = localStorage.getItem("user");
   const user = userString ? JSON.parse(userString) : null;
 
-  useEffect(() => {
-    fetchBooks();
-  }, []);
-
   const fetchBooks = async () => {
     try {
-      const res = await axios.get("http://localhost:4000/api/v1/posts/get");
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/posts/get`);   
       setBooks(res.data.posts);
     } catch (err) {
       console.log(err);
     }
   };
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    fetchBooks();
+  }, []);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -39,7 +39,7 @@ export default function Admin() {
 
     try {
       await axios.post(
-        "http://localhost:4000/api/v1/posts/create",
+        `${import.meta.env.VITE_API_URL}/api/v1/posts/create`,
         {
           ...form,
           author: user.user._id
@@ -60,7 +60,7 @@ export default function Admin() {
     if (!window.confirm("Are you sure you want to delete this book?")) return;
 
     try {
-      await axios.delete(`http://localhost:4000/api/v1/posts/delete/${id}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/v1/posts/delete/${id}`);
       alert("Book deleted ✅");
       fetchBooks();
     } catch (err) {

@@ -4,7 +4,7 @@ import axios from "axios";
 function Login() {
   const [form, setForm] = useState({
     email: "",
-    password: ""
+    password: "",
   });
 
   const handleChange = (e) => {
@@ -16,8 +16,8 @@ function Login() {
 
     try {
       const res = await axios.post(
-        "http://localhost:4000/api/v1/users/login",
-        form
+        `${import.meta.env.VITE_API_URL}/api/v1/users/login`,
+        form,
       );
 
       localStorage.setItem("user", JSON.stringify(res.data));
@@ -36,8 +36,17 @@ function Login() {
       <h2>Login</h2>
 
       <form onSubmit={handleSubmit}>
-        <input name="email" placeholder="Email" onChange={handleChange} /><br /><br />
-        <input name="password" placeholder="Password" type="password" onChange={handleChange} /><br /><br />
+        <input name="email" placeholder="Email" onChange={handleChange} />
+        <br />
+        <br />
+        <input
+          name="password"
+          placeholder="Password"
+          type="password"
+          onChange={handleChange}
+        />
+        <br />
+        <br />
 
         <button type="submit">Login</button>
       </form>

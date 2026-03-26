@@ -10,7 +10,7 @@ function Home() {
     const fetchBooks = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:4000/api/v1/posts/get"
+          `import.meta.env.VITE_API_URL}/api/v1/posts/get`
         );
         setBooks(res.data.posts);
       } catch (err) {
