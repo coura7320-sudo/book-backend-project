@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node backend/src/index.js",
-    "dev": "nodemon BACKEND/src/index.js"
+    "dev": "nodemon backend/src/index.js"
   },
   "repository": {
     "type": "git",

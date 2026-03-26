@@ -4,6 +4,9 @@ const router = Router();
 router.route("/register").post(registerUser);
 router.route("/login").post(loginUser);
 router.route("/logout").post(logoutUser);
+router.get("/", (req, res) => {
+    res.send("User route is working");
+});
 
 
 export default router;
